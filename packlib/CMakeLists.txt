@@ -13,6 +13,7 @@ include ("cmake/ffread.cmake")
 include ("cmake/hbook.cmake")
 include ("cmake/kernlib.cmake")
 include ("cmake/zebra.cmake")
+include ("cmake/minuit.cmake")
 
 ################################################################################
 ## Compile and Link
@@ -23,7 +24,8 @@ add_library(${LIBRARY} STATIC
   ${FFREAD_SOURCES}
   ${HBOOK_SOURCES}
   ${KERNLIB_SOURCES}
-  ${ZEBRA_SOURCES})
+  ${ZEBRA_SOURCES}
+  ${MINUIT_SOURCES})
 set_target_properties(${LIBRARY} PROPERTIES 
   VERSION ${NANOCERNLIB_VERSION} 
   SOVERSION ${NANOCERNLIB_SOVERSION})
@@ -32,7 +34,7 @@ set_target_properties(${LIBRARY} PROPERTIES
 ## Include directories
 ################################################################################
 include_directories(${PROJECT_SOURCE_DIR})
-include_directories("cspack" "epio" "ffread" "hbook" "zebra")
+include_directories("cspack" "epio" "ffread" "hbook" "zebra" "minuit")
 include_directories("kernlib/kernbit")
 include_directories("kernlib/kernnum")
 include_directories("kernlib/kerngen")
@@ -55,6 +57,8 @@ install(DIRECTORY "ffread/ffread"
 install(DIRECTORY "hbook/hbook"
   DESTINATION "${INSTALL_INCLUDE_DIR}" COMPONENT dev)
 install(DIRECTORY "zebra/zebra"
+  DESTINATION "${INSTALL_INCLUDE_DIR}" COMPONENT dev)
+install(DIRECTORY "minuit/minuit"
   DESTINATION "${INSTALL_INCLUDE_DIR}" COMPONENT dev)
 install(DIRECTORY "kernlib/kernbit/kernbit"
   DESTINATION "${INSTALL_INCLUDE_DIR}" COMPONENT dev)
