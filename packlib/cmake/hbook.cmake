@@ -487,6 +487,4 @@ hbook/hrz/hrzkey.F
 hbook/hrz/hrzld.F
 hbook/hrz/hrzout.F
 hbook/hrz/hscr.F
-hbook/fpclassc/ifp.c
-hbook/fpclassc/ifpscl.c
 )

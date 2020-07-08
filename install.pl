@@ -2,8 +2,10 @@ use File::chdir;
 use Cwd;
 #here I assume you want to build into the existing build and install directories, but really you can change these to any directory of your choosing.
 my $curDir = getcwd();
-my $buildDir = $curDir+"/build";
-my $installDir = $curDir+"/install";
+print $curDir."\n";
+my $buildDir = $curDir."/build";
+print $buildDir."\n";
+my $installDir = $curDir."/install";
 #change the compiler options if you are using another version of gcc, or if you want to try the native MacOS clang++
 my $GCC = "gcc-10";
 my $GPP = "g++-10";

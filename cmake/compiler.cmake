@@ -54,7 +54,7 @@ get_filename_component (Fortran_COMPILER_NAME ${CMAKE_Fortran_COMPILER} NAME)
 if (Fortran_COMPILER_NAME MATCHES "gfortran.*")
 
   add_definitions("-DCERNLIB_GFORTRAN -Df2cFortran")
-  set (gfortran_EXTRA_FLAGS "-funroll-loops -fomit-frame-pointer -ftree-vectorize -fno-automatic -fno-second-underscore")
+  set (gfortran_EXTRA_FLAGS "-funroll-loops -fomit-frame-pointer -ftree-vectorize -fno-automatic -fno-second-underscore -fallow-invalid-boz -std=legacy")
   set (CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} ${gfortran_EXTRA_FLAGS}")
   set (CMAKE_Fortran_FLAGS_RELEASE "${CMAKE_Fortran_FLAGS_RELEASE} ${gfortran_EXTRA_FLAGS}")
   set (CMAKE_Fortran_FLAGS_DEBUG   "${CMAKE_Fortran_FLAGS_DEBUG} ${gfortran_EXTRA_FLAGS}")
